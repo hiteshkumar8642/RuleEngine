@@ -12,18 +12,29 @@ This project is a rule engine that allows for creating, combining, and evaluatin
 - Convert ASTs to and from JSON format.
 - Customizable rule evaluation with support for common comparison operators.
 
-## Prerequisites
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+- [Example Usage](#example-usage)
+- [Contributing](#contributing)
+
+# Prerequisites
 
 Before setting up the environment, ensure you have the following installed:
 
-- Python 3.12
+- Python 3.8 or later
 - pip (Python package installer)
 
-## Setup
+# Setup
 
 ```bash
 # Clone the Repository
-git clone https://github.com/your-username/rule-engine.git
+[git clone https://github.com/hiteshkumar8642/rule-engine.git](https://github.com/hiteshkumar8642/RuleEngine.git)
 cd rule-engine
 
 # Create a Virtual Environment
@@ -34,12 +45,73 @@ python -m venv venv
 venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
-
-# Install Dependencies
+```
+# Installation
 pip install -r requirements.txt
 
-# Run the Development Server
+# Running the Application
 python manage.py runserver
 
-# Run Tests
+# Running Tests
 python manage.py test
+
+# Example Usage
+
+# Create a Rule
+python -c "
+from ast import create_rule
+rule_string = 'age > 30 AND department = \"Sales\"'
+ast = create_rule(rule_string)
+import json
+print(json.dumps(ast.to_dict(), indent=2))
+"
+
+# Combine Rules
+python -c "
+from ast import combine_rules
+rules = [
+    'age > 30 AND department = \"Sales\"',
+    'salary > 50000 OR experience > 5'
+]
+combined_ast = combine_rules(rules)
+import json
+print(json.dumps(combined_ast, indent=2))
+"
+
+# Evaluate Rules
+python -c "
+from ast import evaluate_ast
+user_data = {
+    'age': 32,
+    'department': 'Sales',
+    'salary': 60000,
+    'experience': 6
+}
+ast = {'type': 'operator', 'value': 'AND', 'left': {'type': 'operand', 'value': 'age > 30'}, 'right': {'type': 'operand', 'value': 'salary > 50000'}}
+result = evaluate_ast(ast, user_data)
+print(result)
+"
+
+## Contributing
+
+# Fork the Repository
+# Click the "Fork" button at the top right of the repository page.
+
+# Clone Your Fork
+git clone https://github.com/your-username/rule-engine.git
+
+# Create a New Branch
+git checkout -b feature/my-new-feature
+
+# Make Changes
+# Implement your changes or bug fixes.
+
+# Commit Changes
+git add .
+git commit -m "Add a new feature or fix a bug"
+
+# Push to GitHub
+git push origin feature/my-new-feature
+
+# Create a Pull Request
+# Open a pull request from your branch to the main repository’s main branch.
