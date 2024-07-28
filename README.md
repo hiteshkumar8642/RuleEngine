@@ -12,18 +12,6 @@ This project is a rule engine that allows for creating, combining, and evaluatin
 - Convert ASTs to and from JSON format.
 - Customizable rule evaluation with support for common comparison operators.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Setup](#setup)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Running the Application](#running-the-application)
-- [Running Tests](#running-tests)
-- [Example Usage](#example-usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Prerequisites
 
 Before setting up the environment, ensure you have the following installed:
