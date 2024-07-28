@@ -34,7 +34,7 @@ Before setting up the environment, ensure you have the following installed:
 
 ```bash
 # Clone the Repository
-[git clone https://github.com/hiteshkumar8642/rule-engine.git](https://github.com/hiteshkumar8642/RuleEngine.git)
+https://github.com/hiteshkumar8642/RuleEngine.git
 cd rule-engine
 
 # Create a Virtual Environment
@@ -58,16 +58,16 @@ python manage.py test
 # Example Usage
 
 # Create a Rule
-python -c "
+```bash
 from ast import create_rule
 rule_string = 'age > 30 AND department = \"Sales\"'
 ast = create_rule(rule_string)
 import json
 print(json.dumps(ast.to_dict(), indent=2))
-"
+```
 
 # Combine Rules
-python -c "
+```bash
 from ast import combine_rules
 rules = [
     'age > 30 AND department = \"Sales\"',
@@ -76,10 +76,10 @@ rules = [
 combined_ast = combine_rules(rules)
 import json
 print(json.dumps(combined_ast, indent=2))
-"
+```
 
 # Evaluate Rules
-python -c "
+```bash
 from ast import evaluate_ast
 user_data = {
     'age': 32,
@@ -90,28 +90,29 @@ user_data = {
 ast = {'type': 'operator', 'value': 'AND', 'left': {'type': 'operand', 'value': 'age > 30'}, 'right': {'type': 'operand', 'value': 'salary > 50000'}}
 result = evaluate_ast(ast, user_data)
 print(result)
-"
+```
 
 ## Contributing
+```bash
+#Fork the Repository
+#Click the "Fork" button at the top right of the repository page.
 
-# Fork the Repository
-# Click the "Fork" button at the top right of the repository page.
+#Clone Your Fork
+https://github.com/hiteshkumar8642/RuleEngine.git
 
-# Clone Your Fork
-git clone https://github.com/your-username/rule-engine.git
-
-# Create a New Branch
+#Create a New Branch
 git checkout -b feature/my-new-feature
 
-# Make Changes
-# Implement your changes or bug fixes.
+#Make Changes
+#Implement your changes or bug fixes.
 
-# Commit Changes
+#Commit Changes
 git add .
 git commit -m "Add a new feature or fix a bug"
 
-# Push to GitHub
+#Push to GitHub
 git push origin feature/my-new-feature
 
-# Create a Pull Request
-# Open a pull request from your branch to the main repository’s main branch.
+#Create a Pull Request
+#Open a pull request from your branch to the main repository’s main branch.
+```
