@@ -4,9 +4,9 @@ from .models import Rule, UserAttribute
 class RuleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rule
-        fields = '__all__'
+        fields = ['id', 'rule_string', 'ast_json']
 
 class UserAttributeSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAttribute
-        fields = '__all__'
+        fields = ['user_id', 'age', 'department', 'salary', 'experience']
